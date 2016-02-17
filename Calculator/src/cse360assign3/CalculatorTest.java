@@ -79,7 +79,12 @@ public class CalculatorTest
 	@Test
 	public void testgetHistory() 
 	{
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		calc.add(5);
+		calc.subtract(1);
+		calc.multiply(-4);
+		calc.divide(2);
+		assertEquals("0 + 5 - 1 * -4 / 2", calc.getHistory());
 	}
 	
 }

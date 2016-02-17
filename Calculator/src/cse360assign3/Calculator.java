@@ -12,6 +12,7 @@ public class Calculator
 {
 
 	private int total;
+	private String totalString = "0";
 	
 	/**
 	 * Initiates the total to 0
@@ -42,6 +43,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value;
+		totalString = totalString.concat(" + " + value); 
 	}
 	
 	/**
@@ -52,6 +54,7 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total = total - value;
+		totalString = totalString.concat(" - " + value); 
 	}
 	
 	/**
@@ -62,6 +65,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total = total * value;
+		totalString = totalString.concat(" * " + value); 
 	}
 	
 	/**
@@ -76,17 +80,19 @@ public class Calculator
 		
 		else
 			total = total/value;
+		
+		totalString = totalString.concat(" / " + value); 
 	}
 	
 	/**
-	 * Returns the operations performed in a string
+	 * Returns the operations performed
 	 * 
 	 * @param none
-	 * @returns ""       An empty string for now
+	 * @returns totalString       A string showing the history of operations
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return totalString;
 	}
 	
 }
