@@ -61,12 +61,21 @@ public class CalculatorTest
 	{
 		Calculator calc = new Calculator();
 		calc.divide(3);
-		calc.add(5);
+		calc.add(10);
 		calc.divide(2);
 		calc.divide(-4);
-		assertEquals(0, calc.getTotal());
+		assertEquals(-1, calc.getTotal());
 	}
 	
+	@Test
+	public void testDivideByZero()
+	{
+		Calculator calc = new Calculator();
+		calc.add(5);
+		calc.divide(0);
+		assertEquals(0, calc.getTotal());
+	}
+
 	@Test
 	public void testgetHistory() 
 	{
